@@ -11,6 +11,10 @@ header {
   justify-content: center;
   margin: 5% 0%;
 }
+section {
+  display: flex;
+  justify-content: center;
+}
 
 main {
   margin: 5.3% 0;
