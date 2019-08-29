@@ -215,7 +215,7 @@ function collisionSamus() {
   shoot.forEach((shoots, index) => {
     if (samus.checkIfTouch(shoots)) {
       shoot.splice(index, 1)
-      samus.hp -= 5
+      samus.hp -= 200
     }
   })
 }
@@ -270,17 +270,14 @@ function start() {
 
 document.onkeydown = event => {
   switch (event.keyCode) {
-    case 79:
+    case 73:
       megamanX.jump()
       break
-    case 75:
+    case 74:
       megamanX.moveLeft()
       break
-    case 186:
-      megamanX.moveRight()
-      break
     case 76:
-      megamanX.moveDown()
+      megamanX.moveRight()
       break
   }
   update()
@@ -440,7 +437,7 @@ startButton.onclick = function() {
 }
 
 tryAgain.onclick = function() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  start()
+  window.location.href = 'https://andreshernandez1996.github.io/ProjectModule1'
+  //start()
 }
 // update()
