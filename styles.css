@@ -1,7 +1,11 @@
+@font-face {
+  font-family: 'game-over';
+  src: url('./assets/Font/game_over.ttf');
+}
 * {
   margin: 0%;
   padding: 0%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 body {
   background-image: url(./assets/SpaceBackground.jpg);

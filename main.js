@@ -8,7 +8,7 @@ let shoots = []
 let samusHealth = []
 let megamanXHealth = []
 let backgroundSound = new Audio('assets/StageSamus.mp3')
-backgroundSound.volume = 0.1
+backgroundSound.volume = 0.3
 const startButton = document.getElementById('start')
 const tryAgain = document.getElementById('tryagain')
 let megamanShoot = new Audio('assets/ShootMegamanAudio.mp3')
@@ -215,7 +215,7 @@ function collisionSamus() {
   shoot.forEach((shoots, index) => {
     if (samus.checkIfTouch(shoots)) {
       shoot.splice(index, 1)
-      samus.hp -= 2.5
+      samus.hp -= 5
     }
   })
 }
