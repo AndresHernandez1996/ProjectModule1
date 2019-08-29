@@ -1,6 +1,7 @@
 * {
   margin: 0%;
   padding: 0%;
+  overflow: hidden;
 }
 body {
   background-image: url(./assets/SpaceBackground.jpg);
@@ -8,8 +9,9 @@ body {
 }
 header {
   display: flex;
-  justify-content: center;
-  margin: 5% 0%;
+  flex-flow: column;
+  align-items: center;
+  margin: 3% 0%;
 }
 section {
   display: flex;
@@ -17,13 +19,34 @@ section {
 }
 
 main {
-  margin: 5.3% 0;
+  margin: 2.3% 0;
   display: flex;
   justify-content: center;
 }
 
 canvas {
   position: absolute;
-  border: 2px solid;
   margin: 5% 0%;
+}
+
+button {
+  font-family: game-over;
+  font-size: 4vw;
+  color: white;
+  background-image: url(./assets/SpaceBackground.jpg);
+  padding: 3% 1%;
+  border: 0.2vw solid yellow;
+  border-radius: 15px;
+}
+
+.controls {
+  font-family: game-over;
+  font-size: 8vw;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+section :nth-child(2) {
+  display: flex;
+  justify-items: center;
 }

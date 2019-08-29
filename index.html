@@ -4,12 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
@@ -19,17 +13,38 @@
         <img src="./assets/SuperSmashBros.png" width="500vw" alt="" srcset="" />
       </div>
     </header>
+    <br />
+    <br />
+
+    <div class="controls">
+      <div>
+        <img src="./assets/MegamanPixel.png" width="200vw" alt="" srcset="" />
+      </div>
+      <div>
+        <p>S = DISPARAR</p>
+        <p>O = SALTAR</p>
+        <p>Ñ = DERECHA</p>
+        <p>K = IZQUIERDA</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
     <section>
       <div>
-        <button type="button" class="btn btn-danger">PRESS TO START</button>
+        <a href="#canvasA"> <button id="start" type="button">PRESIONA PARA COMENZAR</button></a>
       </div>
     </section>
-    <main>
-      <audio src="assets/StageSamus.mp3" autoplay></audio>
+    <br /><br /><br /><br /><br /><br />
+    <main id="canvasA">
       <img src="assets/NintendoSwitchBackground.png" width="1250" height="auto" alt="" />
       <canvas width="700vw" height="400"></canvas>
     </main>
-
+    <section>
+      <div>
+        <a> <button id="tryagain" type="button">INTENTA OTRA VEZ</button></a>
+      </div>
+    </section>
     <script src="main.js"></script>
   </body>
 </html>
