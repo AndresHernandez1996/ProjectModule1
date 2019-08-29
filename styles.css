@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'game-over';
-  src: url('./assets/Font/game_over.ttf');
+  src: url('./assets/Font/game_over.ttf') format('truetype');
 }
 * {
   margin: 0%;
