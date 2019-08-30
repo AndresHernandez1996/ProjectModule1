@@ -12,7 +12,11 @@ backgroundSound.volume = 0.3
 const startButton = document.getElementById('start')
 const tryAgain = document.getElementById('tryagain')
 let megamanShoot = new Audio('assets/ShootMegamanAudio.mp3')
-megamanShoot.volume = 0.4
+megamanShoot.volume = 0.6
+let gameOverSound = new Audio('assets/GameOverSound.mp3')
+gameOverSound.volume = 0.8
+let winnerSound = new Audio('assets/WinnerSound.mp3')
+
 // let bulletSound = new Audio('assets/BulletSound.mp3')
 
 class FaceChar {
@@ -52,6 +56,23 @@ class FaceChar2 {
   }
 }
 const samusFace = new FaceChar2(640, 0)
+
+class Lens {
+  constructor() {
+    this.width = 80
+    this.height = 30
+    this.img = new Image()
+    this.img.src = 'assets/Lentes.png'
+    this.img.onload = () => {
+      this.draw()
+    }
+  }
+  draw() {
+    this.x
+    ctx.drawImage(this.img, megamanX.x - 10, megamanX.y + 10, this.width, this.height)
+  }
+}
+const lentes = new Lens()
 
 class Background1 {
   constructor() {
@@ -215,7 +236,7 @@ function collisionSamus() {
   shoot.forEach((shoots, index) => {
     if (samus.checkIfTouch(shoots)) {
       shoot.splice(index, 1)
-      samus.hp -= 200
+      samus.hp -= 5
     }
   })
 }
@@ -226,7 +247,8 @@ function gameOver() {
     ctx.fillStyle = 'rgb(246, 53, 53)'
     ctx.fillText(`FIN DE LA PARTIDA`, canvas.width / 2 - 230, 200)
     clearInterval(interval)
-    clearCanvas()
+    backgroundSound.pause()
+    gameOverSound.play()
   }
 }
 
@@ -236,7 +258,9 @@ function youWin() {
     ctx.fillStyle = 'rgb(19, 243, 36)'
     ctx.fillText(`¡GANASTE!`, 230, 200)
     clearInterval(interval)
-    clearCanvas()
+    backgroundSound.pause()
+    lentes.draw()
+    winnerSound.play()
   }
 }
 
@@ -278,6 +302,9 @@ document.onkeydown = event => {
       break
     case 76:
       megamanX.moveRight()
+      break
+    default:
+      samus.draw()
       break
   }
   update()
@@ -438,6 +465,4 @@ startButton.onclick = function() {
 
 tryAgain.onclick = function() {
   window.location.href = 'https://andreshernandez1996.github.io/ProjectModule1'
-  //start()
 }
-// update()
